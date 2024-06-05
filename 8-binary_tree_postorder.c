@@ -4,6 +4,8 @@
  * binary_tree_postorder - Post-order traversal
  * @tree: Pointer to root node of tree to traverse
  * @func: Pointer to a function to call for each node
+ * Description: Value in the node must pass as a parameter to this function.
+ * If tree || func is NULL do nothing
  */
 
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))

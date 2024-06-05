@@ -1,4 +1,4 @@
-#include "binary.h"
+#include "binary_trees.h"
 /**
 * binary_tree_uncle - functions shows if tree has siblings
 * @node: node of tree to check

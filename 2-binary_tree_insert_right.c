@@ -1,40 +1,37 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_insert_right - Insert the  right child
- * @parent: Pointer to node to insert right child in
- * @value: Value to store in new_right_child node
- * Return: Pointer to right child || NULL on failure or parent is NULL
- * If parent's right child already exists, the new node must take its place
- * and the old right-child must be set as the right child of the new node.
+ * binary_tree_insert_right - insert right child
+ * @parent: pointer to the node to insert the right-child in
+ * @value: value to store in the new node
+ * Return: pointer to right child || NULL on failure || parent is NULL
+ * If parent already has a right-child, the new node must take its place
+ * and the old right-child must be set as the right-child of the new node.
  */
 
 binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value)
 {
-	binary_tree_t *new_right_child;
+	binary_tree_t *rightchild;
 
 	if (parent == NULL)
 		return (NULL);
-	
-	/* Allocation of memory for the new right child */
-	new_right_child = malloc(sizeof(binary_tree_t));
 
-	if (new_right_child == NULL)
+	rightchild = malloc(sizeof(binary_tree_t));
+
+	if (rightchild == NULL)
 		return (NULL);
-	
-	new_right_child->parent = parent;
-	new_right_child->n = value;
-	/* Replace the old right child, if it exists */
-	new_right_child->left = NULL;
-	new_right_child->right = parent->right;
-	/* Point right child parent to the new right child */
-	parent->right = new_right_child;
-	
-	/*If the old right child exists, set it as new right child */
-	if (new_right_child->right)
+
+	rightchild->parent = parent;
+	rightchild->n = value;
+	rightchild->left = NULL;
+	rightchild->right = parent->right;
+
+	parent->right = rightchild;
+
+	if (rightchild->right)
 	{
-		new_right_child->right->parent = new_right_child;
+		rightchild->right->parent = rightchild;
 	}
 
-	return (new_right_child);
+	return (rightchild);
 }

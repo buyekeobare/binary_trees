@@ -1,33 +1,33 @@
 #include "binary_trees.h"
 
 /**
- * find_minimum_bst - Finds the minimum value of BST
- * @tree: Pointer to the root node of the Binary search Tree
+ * bst_findMin - finds the minimum value
+ * @node: pointer to the node
  * Return: NULL if node is NULL
  */
 
-bst_t *find_minimum_bst(bst_t *tree)
+bst_t *bst_findMin(bst_t *node)
 {
-	if (!tree)
+	if (node == NULL)
 		return (NULL);
 
-	while (tree->left != NULL)
-		tree = tree->left;
-	return (tree);
+	while (node->left != NULL)
+		node = node->left;
+	return (node);
 }
 
 /**
- * bst_remove - Removes a node from a Binary Search Tree
- * @root: Pointer to the root node of the Binary Search Tree
- * @value: Value to remove from the Binary Search Tree
- * Return: Pointer to the new root node
+ * bst_remove - removes a node from a BST
+ * @root: pointer to the root node of the BST
+ * @value: value to remove from the BST
+ * Return: pointer to the new root node
  */
 
 bst_t *bst_remove(bst_t *root, int value)
 {
-	bst_t *i;
+	bst_t *temp;
 
-	if (!root)
+	if (root == NULL)
 		return (NULL);
 
 	if (value < root->n)
@@ -38,21 +38,21 @@ bst_t *bst_remove(bst_t *root, int value)
 	{
 		if (root->left == NULL)
 		{
-			i = root->right;
+			temp = root->right;
 			free(root);
-			return (i);
+			return (temp);
 		}
 		else if (root->right == NULL)
 		{
-			i = root->left;
+			temp = root->left;
 			free(root);
-			return (i);
+			return (temp);
 		}
 
-		i = find_minimum_bst(root->right);
-		root->n = i->n;
+		temp = bst_findMin(root->right);
+		root->n = temp->n;
 
-		root->right = bst_remove(root->right, i->n);
+		root->right = bst_remove(root->right, temp->n);
 	}
 	return (root);
 }

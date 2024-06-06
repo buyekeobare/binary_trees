@@ -3,7 +3,7 @@
 /**
  * binary_tree_balance - Measures balance factor of a binary tree
  * @tree: Tree to be checked
- * Return: Balanced factor
+ * Return: 0 if tree is NULL
  */
 
 int binary_tree_balance(const binary_tree_t *tree)

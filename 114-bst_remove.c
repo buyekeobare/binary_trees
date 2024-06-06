@@ -102,7 +102,7 @@ bst_t *bst_remove(bst_t *root, int value)
 		bst_remove(root->right, value);
 	else if (value == root->n)
 	{
-		i = next_successor(root);
+		i = remove_node(root);
 		if (i != 0)
 			bst_remove(root->right, i);
 	}

@@ -2,20 +2,20 @@
 /**
  * binary_tree_nodes - function that counts the node
  * @tree: tree to be checked
- * Returns: number of nodes with children
+ * Return: number of nodes with children
  */
+
 size_t binary_tree_nodes(const binary_tree_t *tree)
 {
-	size_t node = 0;
-	if (tree == NULL)
-	{
+
+	if (!tree)
 		return (0);
-	}
-	else
+
+	if (tree->left != NULL || tree->right != NULL)
 	{
-		node += ((tree->left || tree->right) ? : 0);
-		node = node + binary_tree_nodes(tree->left);
-		node = node + binary_tree_nodes(tree->right);
+		return (binary_tree_nodes(tree->left) +
+				binary_tree_nodes(tree->right) + 1);
 	}
-	return (node);
+
+	return (0);
 }

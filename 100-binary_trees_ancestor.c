@@ -4,7 +4,7 @@
  * binary_trees_ancestor - Finds the lowest common ancestor (LCA)
  * @first: Pointer to first node
  * @second: Pointer to second node
- * Return: Pointer to the LCA, or NULL no LCA
+ * Return: Pointer to the LCA, or NULL on failure
  */
 
 binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,

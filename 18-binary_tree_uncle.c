@@ -6,6 +6,7 @@
 */
 binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 {
+<<<<<<< HEAD
 	if (node == NULL || node->parent == NULL ||
 			node->parent->parent == NULL)
 		return (NULL);
@@ -19,4 +20,15 @@ binary_tree_t *binary_tree_uncle(binary_tree_t *node)
 		return (node->parent->parent->left);
 	}
 
+=======
+if (node == NULL || node->parent == NULL || node->parent->parent == NULL) return NULL;
+if (node->parent->parent->left == node->parent)
+{
+return (node->parent->parent->right);
+}
+else
+{
+return (node->parent->parent->left);
+}
+>>>>>>> 5f8406ef77f501f69754f456b02d0cb0e43ba761
 }

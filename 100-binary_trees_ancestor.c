@@ -14,7 +14,7 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 
 	for (left_ancestor = first; left_ancestor; left_ancestor = left_ancestor->parent)
 		for (right_ancestor = second; right_ancestor; right_ancestor = right_ancestor->parent)
-			if (left_ancestor == right_ancetsor)
+			if (left_ancestor == right_ancestor)
 				return ((binary_tree_t *)left_ancestor);
 	return (NULL);
 }

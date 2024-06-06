@@ -17,4 +17,4 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 			if (first_lca == second_lca)
 				return ((binary_tree_t *)first_lca);
 	return (NULL);
-}i
+}

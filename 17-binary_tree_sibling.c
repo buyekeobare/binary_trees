@@ -1,8 +1,8 @@
 #include "binary_trees.h"
 /**
 * binary_tree_sibling - function that checks if a node has a sibling
-* @node: node to be checked
-* Return: pointer to the sibling node
+* @node: node to be checked.
+* Return: pointer to the sibling node.
 */
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {

@@ -9,8 +9,6 @@
 int binary_tree_is_full(const binary_tree_t *tree)
 {
 
-	int l, r;
-
 	if (!tree)
 		return (0);
 
@@ -18,10 +16,8 @@ int binary_tree_is_full(const binary_tree_t *tree)
 		return (1);
 
 	if (tree->left != NULL && tree->right != NULL)
-
-		l = binary_tree_is_full(tree->left);
-		r = binary_tree_is_full(tree->right);
-		return (l && r);
+		return (binary_tree_is_full(tree->left) &&
+				binary_tree_is_full(tree->right));
 
 	return (0);
 }

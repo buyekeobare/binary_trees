@@ -71,5 +71,9 @@ bst_t *bst_remove(bst_t *root, int value);
 int binary_tree_is_avl(const binary_tree_t *tree);
 avl_t *avl_insert(avl_t **tree, int value);
 heap_t *array_to_heap(int *array, size_t size);
+heap_t *heap_insert(heap_t **root, int value);
+void swap(heap_t **arg_node, heap_t **arg_child);
+int binary_tree_is_perfect(const binary_tree_t *tree);
+int height(const binary_tree_t *tree);
 
 #endif /*BINARY_TREES_H*/
